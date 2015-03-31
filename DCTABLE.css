@@ -1,0 +1,344 @@
+body{
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.float{
+    float:left;
+}
+.highcharts-legend-item, .highcharts-legend{
+    display:none;font-size:11px;
+}
+
+.highcharts-button {
+    display:none;
+}
+
+#wrap{
+ width:100%;height:6870;
+}
+
+#backblue, .backblue {
+    background-color:rgba(124, 181, 236,0.4);
+    border-left:2px solid black;
+}
+
+#negative {
+    display:none;
+}
+
+#map{
+   width:66%; 
+   position:relative;
+}
+
+#highcharts-container{
+    left:0;
+    right:0;margin-left:20px;
+}
+
+#tabletable{
+    width:50%; position:relative;}
+
+
+#equalnumber{
+    display:none;
+}
+
+#result {
+    text-align: right;
+    color: gray;
+    min-height: 2em;
+}
+#table-sparkline {
+    margin: 0 auto;
+    border-collapse: collapse;
+    max-width: 100%;
+    position: relative;
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-bottom: 1px solid silver;
+    height: 18px;
+    text-align: center;
+    font-size:10px;
+}
+
+td{
+    border-left: 1px solid silver;
+    padding-top: 7px;
+    padding-bottom: 4px;
+}
+
+#boldbold{
+    border-left: 2px solid black;"
+}
+
+#boldboldbold{
+    border-right:2px solid black;
+}
+
+#up{
+    font-weight:bold;
+    padding:1px;
+}
+
+#down{
+    font-weight:bold;
+    padding:1px;
+}
+
+#equal{
+    border-left: 0px;
+}
+
+#new{
+    border-left: 0px;
+}
+
+#upup{
+    color:#08CF3A;
+    border-left:0px;
+}
+
+#downdown{
+    color:red;
+    border-left:0px;
+}
+
+
+thead th {
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.highcharts-tooltip>span {
+    background: white;
+    border: 1px solid silver;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #888;
+    padding: 8px;
+}
+
+thead tr .header {
+    background: url(images/bg.gif) right center no-repeat;
+}
+
+thead tr .headerSortUp {
+    background: url(images/asc.gif) right center no-repeat;
+}
+thead tr .headerSortDown {
+    background: url(images/desc.gif) right center no-repeat;
+}
+
+#noarrow {
+    background: white;
+}
+
+#searchbox {
+    padding-bottom: 7px;
+} #container {float:right;width:30%; min-width: 310px; max-width: 1600px; height: 6800px;}
+#words{
+background-color:rgba(124,181,236,0.3);
+padding:20px;
+position:relative;
+}
+
+#metrocontent{
+margin-top:10px;font-size:14px; line-height:22px; font-family:Georgia,Times,serif;}
+
+#metho{
+font-size:16px; text-align:center;font-family:Georgia,Times,serif}
+
+
+@media (max-width : 1000px) and (min-width: 780px) {
+
+#map {
+width:100%;
+}
+
+#container {
+height:4000px;
+max-width:600px;
+min-width:0px;
+}
+
+#tabletable {
+}
+
+td, th {
+font-size:9px;
+}
+
+.highcharts-series-group{
+font-size:12px;
+}
+
+.highcharts-axis-labels{
+font-size:9px;
+}
+
+.highcharts-xaxis-labels{
+font-size:9px;
+}
+
+#wrap{
+ width:100%;height:6800;
+}
+
+}
+
+@media (max-width : 779px) and (min-width: 674px) {
+
+#map {
+width:100%;
+}
+
+#container {
+height:2000px;
+float:left;
+max-width:1000px;
+min-width:650px;
+width:100%;
+}
+
+#tabletable {
+width:100%;
+}
+
+td, th {
+font-size:8px;
+}
+
+.highcharts-series-group{
+font-size:12px;
+}
+
+.highcharts-axis-labels{
+font-size:9px;
+}
+
+.highcharts-xaxis-labels{
+font-size:9px;
+}
+
+#wrap{
+ width:100%;height:6850px;
+}
+
+#metho{
+font-size:12px;
+}
+
+#metrocontent{
+font-size:11px;
+}
+
+
+}
+
+@media (max-width : 673px) and (min-width: 568px) {
+
+#map {
+width:100%;
+}
+
+#container {
+height:2000px;
+float:left;
+max-width:1000px;
+min-width:650px;
+width:100%;
+}
+
+#tabletable {
+width:100%;
+}
+
+td, th {
+font-size:7px;
+}
+
+.highcharts-series-group{
+font-size:12px;
+}
+
+.highcharts-axis-labels{
+font-size:9px;
+}
+
+.highcharts-xaxis-labels{
+font-size:9px;
+}
+
+#wrap{
+ width:100%;height:6520px;
+}
+
+#metho{
+font-size:12px;
+}
+
+#metrocontent{
+font-size:11px;
+}
+
+
+}
+
+
+@media (max-width : 567px) {
+
+#map {
+width:100%;
+height:350px;
+}
+
+#container {
+height:2000px;
+float:left;
+max-width:1000px;
+min-width:650px;
+width:100%;
+}
+
+#tabletable {
+width:100%;
+
+}
+
+td, th {
+font-size:7px;
+}
+
+.highcharts-series-group{
+font-size:12px;
+}
+
+.highcharts-axis-labels{
+font-size:9px;
+}
+
+.highcharts-xaxis-labels{
+font-size:9px;
+}
+
+#wrap{
+ width:100%;
+height:7100px;
+}
+
+#metho{
+font-size:10px;
+}
+
+#metrocontent{
+font-size:9px;
+}
+
+}
+

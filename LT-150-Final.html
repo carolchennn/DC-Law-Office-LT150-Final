@@ -1,0 +1,1867 @@
+
+<html>
+<head>
+<link href="DCTABLE.css" rel="stylesheet" type="text/css" media="screen"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="DCJS.js" charset="utf-8"></script>
+<script type="text/javascript" src="jquery.tablesorter.js"></script>
+</head>
+<body>
+<div id="wrap">
+<div id="map" style="float:left;">
+<iframe width='100%' height='520' frameborder='0' src='http://carolcoolkop.cartodb.com/viz/88244a6c-111e-11e4-aab5-0edbca4b5057/embed_map?title=false&description=false&search=false&shareable=true&cartodb_logo=true&layer_selector=false&legends=true&scrollwheel=true&fullscreen=true&sublayer_options=1&sql=&sw_lat=38.89126573717979&sw_lon=-77.04857177083494&ne_lat=38.906929866645314&ne_lon=-77.00720137898924' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+</div>
+
+<div id="container"></div>
+
+
+<div id="tabletable" style="float:left;max-width:100%;">
+<div id="searchbox">
+<input type="text" id="search" placeholder="Type to search the table"></div>
+<table id="table-sparkline">
+<thead>
+<tr>
+<th style="border-bottom:0px; background:none;border-left:1px solid silver;padding-left:6px; padding-right:6px;"></th>
+<th style="border-bottom:0px; background:none;border-left:1px solid silver;font-size:13px;" colspan="2">Rank</th>
+<th style="border-bottom:0px; background:none;border-left:1px solid silver;font-size:13px;" colspan="3">Lawyers</th>
+<th style="border-bottom:0px; background:none;border-left:1px solid silver;font-size:13px;" colspan="3"border-left: 1px solid silver>Partners</th>
+<th style="border-bottom:0px; background:none;border-left:1px solid silver;border-right:1px solid silver;padding-left:3px; padding-right:3px;"></th>
+</tr>
+<tr>
+<th style="border-top:0px;border-left:1px solid silver; padding-left: 6px;
+padding-right: 6px;">Law Firm</th>
+<th style="border-top:0px;border-left:1px solid silver;padding-left:8px;padding-right:8px;">2014</th>
+<th style="border-top:0px;padding-left:12px;padding-right:12px;">Change from 2013</th>
+<th style="border-top:0px;border-left:1px solid silver;">2014</th>
+<th style="border-top:0px;">2013</th>
+<th style="border-top:0px;">Percent Change</th>
+<th style="border-top:0px;border-left:1px solid silver;">2014</th>
+<th style="border-top:0px;">2013</th>
+<th style="border-top:0px;">Percent Change</th>
+<th style="border-top:0px;border-left:1px solid silver;border-right: 1px solid silver;padding-left:3px; padding-right:3px;">Founding City</th>
+</tr>
+</thead>
+<tbody id="tbody-sparkline">
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Covington &amp; Burling</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">1</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">1</td>
+<td id="boldbold" class="backblue">440</td>
+<td>436</td>
+<td id="boldboldbold">1%</td>
+<td id="backblue">143</td>
+<td>137</td>
+<td id="boldboldbold">4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Hogan Lovells</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">2</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">437</td>
+<td>441</td>
+<td id="boldboldbold">-1%</td>
+<td id="backblue">206</td>
+<td>212</td>
+<td id="boldboldbold">-3%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington / London</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Arnold &amp; Porter</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">3</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">424</td>
+<td>436</td>
+<td id="boldboldbold">-3%</td>
+<td id="backblue">130</td>
+<td>124</td>
+<td id="boldboldbold">5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Wilmer Cutler Pickering Hale and Dorr</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">4</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">396</td>
+<td>422</td>
+<td id="boldboldbold">-6%</td>
+<td id="backblue">101</td>
+<td>101</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington/Boston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Williams &amp; Connolly</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">5</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">4</td>
+<td id="boldbold" class="backblue">322</td>
+<td>270</td>
+<td id="boldboldbold">19%</td>
+<td id="backblue">113</td>
+<td>113</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Crowell &amp; Moring</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">6</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">289</td>
+<td>294</td>
+<td id="boldboldbold">-2%</td>
+<td id="backblue">122</td>
+<td>122</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Latham &amp; Watkins</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">7</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">289</td>
+<td>283</td>
+<td id="boldboldbold">2%</td>
+<td id="backblue">87</td>
+<td>84</td>
+<td id="boldboldbold">4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Los Angeles</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Steptoe &amp; Johnson LLP</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">8</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>2</td>
+<td id="boldbold" class="backblue">287</td>
+<td>294</td>
+<td id="boldboldbold">-2%</td>
+<td id="backblue">100</td>
+<td>113</td>
+<td id="boldboldbold">-12%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Sidley Austin</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">9</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">273</td>
+<td>277</td>
+<td id="boldboldbold">-1%</td>
+<td id="backblue">108</td>
+<td>108</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Wiley Rein</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">10</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">1</td>
+<td id="boldbold" class="backblue">265</td>
+<td>260</td>
+<td id="boldboldbold">2%</td>
+<td id="backblue">124</td>
+<td>125</td>
+<td id="boldboldbold">-1%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Skadden, Arps, Slate, Meagher &amp; Flom</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">11</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">262</td>
+<td>267</td>
+<td id="boldboldbold">-2%</td>
+<td id="backblue">61</td>
+<td>66</td>
+<td id="boldboldbold">-8%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Jones Day</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">12</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">2</td>
+<td id="boldbold" class="backblue">253</td>
+<td>248</td>
+<td id="boldboldbold">2%</td>
+<td id="backblue">103</td>
+<td>96</td>
+<td id="boldboldbold">7%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Cleveland</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Morgan, Lewis &amp; Bockius</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">13</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">247</td>
+<td>249</td>
+<td id="boldboldbold">-1%</td>
+<td id="backblue">102</td>
+<td>99</td>
+<td id="boldboldbold">3%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Philadelphia</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Patton Boggs</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">14</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">231</td>
+<td>249</td>
+<td id="boldboldbold">-7%</td>
+<td id="backblue">112</td>
+<td>131</td>
+<td id="boldboldbold">-15%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Akin Gump Strauss Hauer &amp; Feld</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">15</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">1</td>
+<td id="boldbold" class="backblue">231</td>
+<td>234</td>
+<td id="boldboldbold">-1%</td>
+<td id="backblue">92</td>
+<td>93</td>
+<td id="boldboldbold">-1%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Dallas</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Venable</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">16</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">2</td>
+<td id="boldbold" class="backblue">220</td>
+<td>214</td>
+<td id="boldboldbold">3%</td>
+<td id="backblue">117</td>
+<td>121</td>
+<td id="boldboldbold">-3%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Baltimore</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Kirkland &amp; Ellis</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">17</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">217</td>
+<td>229</td>
+<td id="boldboldbold">-5%</td>
+<td id="backblue">110</td>
+<td>102</td>
+<td id="boldboldbold">8%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Finnegan, Henderson, Farabow, Garrett &amp; Dunner</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">18</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>3</td>
+<td id="boldbold" class="backblue">214</td>
+<td>238</td>
+<td id="boldboldbold">-10%</td>
+<td id="backblue">80</td>
+<td>85</td>
+<td id="boldboldbold">-5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Gibson, Dunn &amp; Crutcher</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">19</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">4</td>
+<td id="boldbold" class="backblue">206</td>
+<td>182</td>
+<td id="boldboldbold">13%</td>
+<td id="backblue">58</td>
+<td>56</td>
+<td id="boldboldbold">4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Los Angeles</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">McDermott Will &amp; Emery</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">20</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">203</td>
+<td>201</td>
+<td id="boldboldbold">1%</td>
+<td id="backblue">116</td>
+<td>108</td>
+<td id="boldboldbold">7%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Arent Fox</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">21</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">195</td>
+<td>201</td>
+<td id="boldboldbold">-3%</td>
+<td id="backblue">104</td>
+<td>108</td>
+<td id="boldboldbold">-4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">K&amp;L Gates</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">22</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">169</td>
+<td>172</td>
+<td id="boldboldbold">-2%</td>
+<td id="backblue">100</td>
+<td>100</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Pittsburgh</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">King &amp; Spalding</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">23</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">2</td>
+<td id="boldbold" class="backblue">155</td>
+<td>150</td>
+<td id="boldboldbold">3%</td>
+<td id="backblue">65</td>
+<td>66</td>
+<td id="boldboldbold">-2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Atlanta</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Sutherland Asbill &amp; Brennan</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">24</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">3</td>
+<td id="boldbold" class="backblue">150</td>
+<td>148</td>
+<td id="boldboldbold">1%</td>
+<td id="backblue">67</td>
+<td>67</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Atlanta</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Mayer Brown</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">25</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">6</td>
+<td id="boldbold" class="backblue">145</td>
+<td>135</td>
+<td id="boldboldbold">7%</td>
+<td id="backblue">64</td>
+<td>65</td>
+<td id="boldboldbold">-2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Pillsbury Winthrop Shaw Pittman</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">26</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">143</td>
+<td>148</td>
+<td id="boldboldbold">-3%</td>
+<td id="backblue">75</td>
+<td>77</td>
+<td id="boldboldbold">-3%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">San Francisco/Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Holland &amp; Knight</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">27</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">3</td>
+<td id="boldbold" class="backblue">139</td>
+<td>135</td>
+<td id="boldboldbold">3%</td>
+<td id="backblue">95</td>
+<td>92</td>
+<td id="boldboldbold">3%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Tampa, Fla.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Dickstein Shapiro</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">28</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>7</td>
+<td id="boldbold" class="backblue">138</td>
+<td>190</td>
+<td id="boldboldbold">-27%</td>
+<td id="backblue">68</td>
+<td>88</td>
+<td id="boldboldbold">-22%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Bingham McCutchen</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">29</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>4</td>
+<td id="boldbold" class="backblue">138</td>
+<td>178</td>
+<td id="boldboldbold">-22%</td>
+<td id="backblue">65</td>
+<td>82</td>
+<td id="boldboldbold">-20%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Boston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">DLA Piper</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">30</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>2</td>
+<td id="boldbold" class="backblue">135</td>
+<td>145</td>
+<td id="boldboldbold">-7%</td>
+<td id="backblue">74</td>
+<td>82</td>
+<td id="boldboldbold">-10%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Baltimore/Palo Alto, Calif.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">White &amp; Case</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">31</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>2</td>
+<td id="boldbold" class="backblue">128</td>
+<td>136</td>
+<td id="boldboldbold">-6%</td>
+<td id="backblue"> - </td>
+<td>30</td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Baker Botts</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">32</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">1</td>
+<td id="boldbold" class="backblue">126</td>
+<td>133</td>
+<td id="boldboldbold">-5%</td>
+<td id="backblue">58</td>
+<td>57</td>
+<td id="boldboldbold">2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Houston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Baker &amp; Hostetler</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">33</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">2</td>
+<td id="boldbold" class="backblue">123</td>
+<td>114</td>
+<td id="boldboldbold">8%</td>
+<td id="backblue">64</td>
+<td>63</td>
+<td id="boldboldbold">2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Cleveland</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Hunton &amp; Williams</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">34</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">123</td>
+<td>134</td>
+<td id="boldboldbold">-8%</td>
+<td id="backblue">59</td>
+<td>62</td>
+<td id="boldboldbold">-5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Richmond, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Sterne, Kessler, Goldstein &amp; Fox</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">35</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">122</td>
+<td>117</td>
+<td id="boldboldbold">4%</td>
+<td id="backblue">42</td>
+<td>38</td>
+<td id="boldboldbold">11%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Baker &amp; McKenzie</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">36</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">1</td>
+<td id="boldbold" class="backblue">118</td>
+<td>111</td>
+<td id="boldboldbold">6%</td>
+<td id="backblue">49</td>
+<td>47</td>
+<td id="boldboldbold">4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">McKenna Long &amp; Aldridge</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">37</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">6</td>
+<td id="boldbold" class="backblue">111</td>
+<td>104</td>
+<td id="boldboldbold">7%</td>
+<td id="backblue">54</td>
+<td>51</td>
+<td id="boldboldbold">6%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington/Atlanta</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Foley &amp; Lardner</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">38</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">106</td>
+<td>109</td>
+<td id="boldboldbold">-3%</td>
+<td id="backblue">50</td>
+<td>55</td>
+<td id="boldboldbold">-8%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Milwaukee</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">BuckleySandler</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">39</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>5</td>
+<td id="boldbold" class="backblue">103</td>
+<td>124</td>
+<td id="boldboldbold">-17%</td>
+<td id="backblue">21</td>
+<td>20</td>
+<td id="boldboldbold">4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Drinker Biddle &amp; Reath</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">40</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">1</td>
+<td id="boldbold" class="backblue">100</td>
+<td>105</td>
+<td id="boldboldbold">-5%</td>
+<td id="backblue">50</td>
+<td>48</td>
+<td id="boldboldbold">4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Philadelphia</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Oblon, Spivak, McClelland, Maier &amp; Neustadt</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">41</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">10</td>
+<td id="boldbold" class="backblue">100</td>
+<td>86</td>
+<td id="boldboldbold">16%</td>
+<td id="backblue">47</td>
+<td>43</td>
+<td id="boldboldbold">9%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Alexandria, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">O'Melveny &amp; Myers</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">42</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">100</td>
+<td>107</td>
+<td id="boldboldbold">-7%</td>
+<td id="backblue">22</td>
+<td>29</td>
+<td id="boldboldbold">-25%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Los Angeles</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Cleary Gottlieb Steen &amp; Hamilton</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">43</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">5</td>
+<td id="boldbold" class="backblue">100</td>
+<td>92</td>
+<td id="boldboldbold">9%</td>
+<td id="backblue">20</td>
+<td>20</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Morrison &amp; Foerster</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">44</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">7</td>
+<td id="boldbold" class="backblue">99</td>
+<td>86</td>
+<td id="boldboldbold">15%</td>
+<td id="backblue">38</td>
+<td>35</td>
+<td id="boldboldbold">8%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">San Francisco</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Paul Hastings</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">45</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>3</td>
+<td id="boldbold" class="backblue">99</td>
+<td>105</td>
+<td id="boldboldbold">-6%</td>
+<td id="backblue">30</td>
+<td>28</td>
+<td id="boldboldbold">9%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Los Angeles</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Shulman, Rogers, Gandal, Pordy &amp; Ecker</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">46</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">97</td>
+<td>96</td>
+<td id="boldboldbold">1%</td>
+<td id="backblue">57</td>
+<td>58</td>
+<td id="boldboldbold">-2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Potomac, Md.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Goodwin Procter</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">47</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>8</td>
+<td id="boldbold" class="backblue">97</td>
+<td>108</td>
+<td id="boldboldbold">-10%</td>
+<td id="backblue">38</td>
+<td>41</td>
+<td id="boldboldbold">-9%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Boston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Winston &amp; Strawn</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">48</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">94</td>
+<td>90</td>
+<td id="boldboldbold">4%</td>
+<td id="backblue">48</td>
+<td>44</td>
+<td id="boldboldbold">10%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Alston &amp; Bird</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">49</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>2</td>
+<td id="boldbold" class="backblue">94</td>
+<td>93</td>
+<td id="boldboldbold">1%</td>
+<td id="backblue">41</td>
+<td> - </td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Atlanta</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Cadwalader, Wickersham &amp; Taft</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">50</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>6</td>
+<td id="boldbold" class="backblue">93</td>
+<td>97</td>
+<td id="boldboldbold">-4%</td>
+<td id="backblue">29</td>
+<td>27</td>
+<td id="boldboldbold">7%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Miller &amp; Chevalier</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">51</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>3</td>
+<td id="boldbold" class="backblue">91</td>
+<td>91</td>
+<td id="boldboldbold">0%</td>
+<td id="backblue">50</td>
+<td>47</td>
+<td id="boldboldbold">6%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Kelley Drye &amp; Warren</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">52</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">2</td>
+<td id="boldbold" class="backblue">88</td>
+<td>85</td>
+<td id="boldboldbold">4%</td>
+<td id="backblue">41</td>
+<td>39</td>
+<td id="boldboldbold">5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Perkins Coie</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">53</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">2</td>
+<td id="boldbold" class="backblue">86</td>
+<td>84</td>
+<td id="boldboldbold">2%</td>
+<td id="backblue">42</td>
+<td>43</td>
+<td id="boldboldbold">-2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Seattle</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Nixon Peabody</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">54</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">4</td>
+<td id="boldbold" class="backblue">84</td>
+<td>81</td>
+<td id="boldboldbold">4%</td>
+<td id="backblue">44</td>
+<td>44</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Rochester, N.Y./Boston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Dechert</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">55</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">10</td>
+<td id="boldbold" class="backblue">83</td>
+<td>75</td>
+<td id="boldboldbold">11%</td>
+<td id="backblue">33</td>
+<td>32</td>
+<td id="boldboldbold">2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Philadelphia</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Fried, Frank, Harris, Shriver &amp; Jacobson</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">56</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">82</td>
+<td>82</td>
+<td id="boldboldbold">0%</td>
+<td id="backblue">27</td>
+<td>26</td>
+<td id="boldboldbold">2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Paul, Weiss, Rifkind, Wharton &amp; Garrison</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">57</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">10</td>
+<td id="boldbold" class="backblue">82</td>
+<td>74</td>
+<td id="boldboldbold">11%</td>
+<td id="backblue">10</td>
+<td>9</td>
+<td id="boldboldbold">10%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Willkie Farr &amp; Gallagher</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">58</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>6</td>
+<td id="boldbold" class="backblue">82</td>
+<td>90</td>
+<td id="boldboldbold">-9%</td>
+<td id="backblue"> - </td>
+<td>20</td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Greenberg Traurig</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">59</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>3</td>
+<td id="boldbold" class="backblue">80</td>
+<td>83</td>
+<td id="boldboldbold">-4%</td>
+<td id="backblue">45</td>
+<td>49</td>
+<td id="boldboldbold">-9%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Miami</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Jenner &amp; Block</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">60</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">3</td>
+<td id="boldbold" class="backblue">79</td>
+<td>78</td>
+<td id="boldboldbold">1%</td>
+<td id="backblue">41</td>
+<td>42</td>
+<td id="boldboldbold">-2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Dentons</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">61</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>10</td>
+<td id="boldbold" class="backblue">78</td>
+<td>86</td>
+<td id="boldboldbold">-9%</td>
+<td id="backblue">47</td>
+<td>51</td>
+<td id="boldboldbold">-8%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Reed Smith</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">62</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">78</td>
+<td>80</td>
+<td id="boldboldbold">-3%</td>
+<td id="backblue">35</td>
+<td>35</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">>Pittsburgh</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Vinson &amp; Elkins</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">63</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">5</td>
+<td id="boldbold" class="backblue">76</td>
+<td>70</td>
+<td id="boldboldbold">9%</td>
+<td id="backblue">29</td>
+<td>28</td>
+<td id="boldboldbold">5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Houston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Orrick, Herrington &amp; Sutcliffe</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">64</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>2</td>
+<td id="boldbold" class="backblue">75</td>
+<td>79</td>
+<td id="boldboldbold">-5%</td>
+<td id="backblue">27</td>
+<td>26</td>
+<td id="boldboldbold">4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">San Francisco</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Cooley</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">65</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>6</td>
+<td id="boldbold" class="backblue">72</td>
+<td>80</td>
+<td id="boldboldbold">-10%</td>
+<td id="backblue">21</td>
+<td>22</td>
+<td id="boldboldbold">-5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Palo Alto, Calif.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Ropes &amp; Gray</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">66</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">68</td>
+<td>75</td>
+<td id="boldboldbold">-9%</td>
+<td id="backblue">17</td>
+<td>20</td>
+<td id="boldboldbold">-17%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Boston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Wilson Sonsini Goodrich &amp; Rosati</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">67</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">20</td>
+<td id="boldbold" class="backblue">67</td>
+<td>54</td>
+<td id="boldboldbold">24%</td>
+<td id="backblue">16</td>
+<td>15</td>
+<td id="boldboldbold">7%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Palo Alto, Calif.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Van Ness Feldman</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">68</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">1</td>
+<td id="boldbold" class="backblue">65</td>
+<td>67</td>
+<td id="boldboldbold">-3%</td>
+<td id="backblue">37</td>
+<td>38</td>
+<td id="boldboldbold">-3%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Hollingsworth</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">69</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">2</td>
+<td id="boldbold" class="backblue">65</td>
+<td>65</td>
+<td id="boldboldbold">0%</td>
+<td id="backblue">29</td>
+<td>29</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Weil, Gotshal &amp; Manges</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">70</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>10</td>
+<td id="boldbold" class="backblue">64</td>
+<td>80</td>
+<td id="boldboldbold">-20%</td>
+<td id="backblue">23</td>
+<td>29</td>
+<td id="boldboldbold">-21%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Cooley</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">71</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">3</td>
+<td id="boldbold" class="backblue">63</td>
+<td>63</td>
+<td id="boldboldbold">0%</td>
+<td id="backblue">24</td>
+<td>25</td>
+<td id="boldboldbold">-4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Palo Alto, Calif.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Epstein Becker &amp; Green</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">72</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">7</td>
+<td id="boldbold" class="backblue">63</td>
+<td>60</td>
+<td id="boldboldbold">5%</td>
+<td id="backblue"> - </td>
+<td>25</td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York / Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Caplin &amp; Drysdale</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">73</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">9</td>
+<td id="boldbold" class="backblue">61</td>
+<td>59</td>
+<td id="boldboldbold">3%</td>
+<td id="backblue">35</td>
+<td>32</td>
+<td id="boldboldbold">9%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Ballard Spahr</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">74</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">23</td>
+<td id="boldbold" class="backblue">61</td>
+<td>48</td>
+<td id="boldboldbold">27%</td>
+<td id="backblue">24</td>
+<td>22</td>
+<td id="boldboldbold">9%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Philadelphia</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Kilpatrick Townsend &amp; Stockton</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">75</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>4</td>
+<td id="boldbold" class="backblue">60</td>
+<td>64</td>
+<td id="boldboldbold">-6%</td>
+<td id="backblue">32</td>
+<td>35</td>
+<td id="boldboldbold">-9%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Atlanta/San Francisco</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Groom Law Group</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">76</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">60</td>
+<td>61</td>
+<td id="boldboldbold">-2%</td>
+<td id="backblue">31</td>
+<td>30</td>
+<td id="boldboldbold">3%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Norton Rose Fulbright</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">77</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>11</td>
+<td id="boldbold" class="backblue">60</td>
+<td>75</td>
+<td id="boldboldbold">-20%</td>
+<td id="backblue">27</td>
+<td>31</td>
+<td id="boldboldbold">-15%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Houston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Chadbourne &amp; Parke</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">78</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">2</td>
+<td id="boldbold" class="backblue">60</td>
+<td>60</td>
+<td id="boldboldbold">0%</td>
+<td id="backblue">17</td>
+<td>15</td>
+<td id="boldboldbold">13%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Blank Rome</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">79</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">59</td>
+<td>60</td>
+<td id="boldboldbold">-2%</td>
+<td id="backblue">30</td>
+<td>34</td>
+<td id="boldboldbold">-12%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Philadelphia</td>
+</tr>
+
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Lerch, Early &amp; Brewer</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">80</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>6</td>
+<td id="boldbold" class="backblue">58</td>
+<td>62</td>
+<td id="boldboldbold">-6%</td>
+<td id="backblue">38</td>
+<td>41</td>
+<td id="boldboldbold">-7%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">>Bethesda, Md.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Keller and Heckman</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">81</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>7</td>
+<td id="boldbold" class="backblue">58</td>
+<td>63</td>
+<td id="boldboldbold">-8%</td>
+<td id="backblue">32</td>
+<td>34</td>
+<td id="boldboldbold">-6%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Birch, Stewart, Kolasch &amp; Birch</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">82</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">13</td>
+<td id="boldbold" class="backblue">58</td>
+<td>49</td>
+<td id="boldboldbold">18%</td>
+<td id="backblue"> - </td>
+<td>21</td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Falls Church, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Odin, Feldman &amp; Pittleman</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">83</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">57</td>
+<td>57</td>
+<td id="boldboldbold">0%</td>
+<td id="backblue">40</td>
+<td>41</td>
+<td id="boldboldbold">-2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Fairfax, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Katten Muchin Rosenman</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">84</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">57</td>
+<td>59</td>
+<td id="boldboldbold">-3%</td>
+<td id="backblue">32</td>
+<td> - </td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Quinn Emanuel Urquhart &amp; Sullivan</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">85</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">29</td>
+<td id="boldbold" class="backblue">57</td>
+<td>39</td>
+<td id="boldboldbold">46%</td>
+<td id="backblue">13</td>
+<td>9</td>
+<td id="boldboldbold">44%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Los Angeles</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Troutman Sanders</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">86</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>13</td>
+<td id="boldbold" class="backblue">57</td>
+<td>65</td>
+<td id="boldboldbold">-12%</td>
+<td id="backblue"> - </td>
+<td>34</td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Atlanta</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Sheppard, Mullin, Richter &amp; Hampton</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">87</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">5</td>
+<td id="boldbold" class="backblue">56</td>
+<td>51</td>
+<td id="boldboldbold">10%</td>
+<td id="backblue">31</td>
+<td>25</td>
+<td id="boldboldbold">24%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Los Angeles</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Hughes Hubbard &amp; Reed</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">88</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">3</td>
+<td id="boldbold" class="backblue">56</td>
+<td>52</td>
+<td id="boldboldbold">8%</td>
+<td id="backblue">12</td>
+<td>10</td>
+<td id="boldboldbold">20%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Mintz, Levin, Cohn, Ferris, Glovsky and Popeo</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">89</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>12</td>
+<td id="boldbold" class="backblue">55</td>
+<td>61</td>
+<td id="boldboldbold">-10%</td>
+<td id="backblue">24</td>
+<td>24</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Boston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Fish &amp; Richardson</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">90</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>9</td>
+<td id="boldbold" class="backblue">53</td>
+<td>59</td>
+<td id="boldboldbold">-10%</td>
+<td id="backblue">29</td>
+<td>21</td>
+<td id="boldboldbold">36%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Boston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Zuckerman Spaeder</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">91</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>5</td>
+<td id="boldbold" class="backblue">52</td>
+<td>54</td>
+<td id="boldboldbold">-4%</td>
+<td id="backblue">27</td>
+<td>28</td>
+<td id="boldboldbold">-4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Squire Sanders</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">92</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>6</td>
+<td id="boldbold" class="backblue">51</td>
+<td>53</td>
+<td id="boldboldbold">-4%</td>
+<td id="backblue">22</td>
+<td>24</td>
+<td id="boldboldbold">-8%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Cleveland, Ohio</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Bryan Cave</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">93</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>8</td>
+<td id="boldbold" class="backblue">51</td>
+<td>56</td>
+<td id="boldboldbold">-9%</td>
+<td id="backblue">17</td>
+<td>18</td>
+<td id="boldboldbold">-6%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">St. Louis</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Beveridge &amp; Diamond</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">94</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>2</td>
+<td id="boldbold" class="backblue">50</td>
+<td>50</td>
+<td id="boldboldbold">0%</td>
+<td id="backblue">29</td>
+<td>27</td>
+<td id="boldboldbold">7%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Seyfarth Shaw</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">95</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>3</td>
+<td id="boldbold" class="backblue">50</td>
+<td>51</td>
+<td id="boldboldbold">-2%</td>
+<td id="backblue">23</td>
+<td>25</td>
+<td id="boldboldbold">-8%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Shearman &amp; Sterling</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">97</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">5</td>
+<td id="boldbold" class="backblue">50</td>
+<td>44</td>
+<td id="boldboldbold">14%</td>
+<td id="backblue"> - </td>
+<td> - </td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Davis Wright Tremaine</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">97</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>4</td>
+<td id="boldbold" class="backblue">49</td>
+<td>49</td>
+<td id="boldboldbold">0%</td>
+<td id="backblue">30</td>
+<td> - </td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Seattle</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Bracewell &amp; Giuliani</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">98</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>8</td>
+<td id="boldbold" class="backblue">49</td>
+<td>51</td>
+<td id="boldboldbold">-4%</td>
+<td id="backblue">25</td>
+<td>26</td>
+<td id="boldboldbold">-4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Houston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">McGuireWoods</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">99</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>9</td>
+<td id="boldbold" class="backblue">49</td>
+<td>52</td>
+<td id="boldboldbold">-6%</td>
+<td id="backblue">21</td>
+<td>21</td>
+<td id="boldboldbold">-1%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Richmond, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Oliff</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">100</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">48</td>
+<td>45</td>
+<td id="boldboldbold">7%</td>
+<td id="backblue">12</td>
+<td>13</td>
+<td id="boldboldbold">-8%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Alexandria, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Nixon &amp; Vanderhye</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">101</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>4</td>
+<td id="boldbold" class="backblue">46</td>
+<td>47</td>
+<td id="boldboldbold">-2%</td>
+<td id="backblue">34</td>
+<td>35</td>
+<td id="boldboldbold">-3%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Arlington, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Sullivan &amp; Cromwell</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">102</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">4</td>
+<td id="boldbold" class="backblue">46</td>
+<td>43</td>
+<td id="boldboldbold">7%</td>
+<td id="backblue">9</td>
+<td>9</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Clifford Chance</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">103</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>5</td>
+<td id="boldbold" class="backblue">44</td>
+<td>45</td>
+<td id="boldboldbold">-2%</td>
+<td id="backblue">12</td>
+<td>14</td>
+<td id="boldboldbold">-14%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">London</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Wilkinson Barker Knauer</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">104</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>2</td>
+<td id="boldbold" class="backblue">43</td>
+<td>44</td>
+<td id="boldboldbold">-2%</td>
+<td id="backblue">34</td>
+<td>36</td>
+<td id="boldboldbold">-6%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">McGuireWoods</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">105</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">4</td>
+<td id="boldbold" class="backblue">43</td>
+<td>41</td>
+<td id="boldboldbold">5%</td>
+<td id="backblue">21</td>
+<td>19</td>
+<td id="boldboldbold">10%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Richmond, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Pepper Hamilton</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">106</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">1</td>
+<td id="boldbold" class="backblue">42</td>
+<td>42</td>
+<td id="boldboldbold">0%</td>
+<td id="backblue">20</td>
+<td>21</td>
+<td id="boldboldbold">-5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Philadelphia</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Cohen Milstein Sellers &amp; Toll</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">107</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>7</td>
+<td id="boldbold" class="backblue">42</td>
+<td>45</td>
+<td id="boldboldbold">-7%</td>
+<td id="backblue">19</td>
+<td>20</td>
+<td id="boldboldbold">-5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Greenberg Traurig</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">108</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">4</td>
+<td id="boldbold" class="backblue">41</td>
+<td>40</td>
+<td id="boldboldbold">3%</td>
+<td id="backblue">27</td>
+<td>29</td>
+<td id="boldboldbold">-5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Miami</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Holland &amp; Knight</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">109</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">1</td>
+<td id="boldbold" class="backblue">41</td>
+<td>41</td>
+<td id="boldboldbold">0%</td>
+<td id="backblue">24</td>
+<td>23</td>
+<td id="boldboldbold">4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Tampa, Fla.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Rothwell, Figg, Ernst &amp; Manbeck</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">110</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">5</td>
+<td id="boldbold" class="backblue">41</td>
+<td>39</td>
+<td id="boldboldbold">5%</td>
+<td id="backblue">24</td>
+<td>23</td>
+<td id="boldboldbold">4%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Pillsbury Winthrop Shaw Pittman</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">111</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">7</td>
+<td id="boldbold" class="backblue">41</td>
+<td>38</td>
+<td id="boldboldbold">8%</td>
+<td id="backblue">22</td>
+<td>19</td>
+<td id="boldboldbold">16%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">San Francisco/Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Womble Carlyle Sandridge &amp; Rice</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">112</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>8</td>
+<td id="boldbold" class="backblue">40</td>
+<td>44</td>
+<td id="boldboldbold">-9%</td>
+<td id="backblue">31</td>
+<td> - </td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Winston-Salem, N.C.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Linowes and Blocher</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">113</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>8</td>
+<td id="boldbold" class="backblue">40</td>
+<td>43</td>
+<td id="boldboldbold">-7%</td>
+<td id="backblue">25</td>
+<td>25</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Silver Spring, Md.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Proskauer Rose</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">114</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">6</td>
+<td id="boldbold" class="backblue">40</td>
+<td>36</td>
+<td id="boldboldbold">11%</td>
+<td id="backblue">12</td>
+<td>11</td>
+<td id="boldboldbold">9%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Rees Broome</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">115</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">7</td>
+<td id="boldbold" class="backblue">39</td>
+<td>35</td>
+<td id="boldboldbold">11%</td>
+<td id="backblue">19</td>
+<td>15</td>
+<td id="boldboldbold">23%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Tysons Corner, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Finnegan, Henderson, Farabow, Garrett &amp; Dunner</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">116</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>14</td>
+<td id="boldbold" class="backblue">38</td>
+<td>44</td>
+<td id="boldboldbold">-14%</td>
+<td id="backblue">21</td>
+<td>22</td>
+<td id="boldboldbold">-6%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Stein Sperling Bennett De Jong Driscoll</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">117</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>5</td>
+<td id="boldbold" class="backblue">38</td>
+<td>41</td>
+<td id="boldboldbold">-7%</td>
+<td id="backblue">15</td>
+<td>15</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Rockville, Md.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Paley, Rothman, Goldstein, Rosenberg, Eig &amp; Cooper</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">118</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">3</td>
+<td id="boldbold" class="backblue">37</td>
+<td>34</td>
+<td id="boldboldbold">9%</td>
+<td id="backblue">27</td>
+<td>24</td>
+<td id="boldboldbold">13%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Bethesda, Md.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Watt, Tieder, Hoffar &amp; Fitzgerald</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">119</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>12</td>
+<td id="boldbold" class="backblue">37</td>
+<td>42</td>
+<td id="boldboldbold">-12%</td>
+<td id="backblue">25</td>
+<td>30</td>
+<td id="boldboldbold">-17%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">McLean, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Banner &amp; Witcoff</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">120</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">16</td>
+<td id="boldbold" class="backblue">37</td>
+<td>31</td>
+<td id="boldboldbold">19%</td>
+<td id="backblue">23</td>
+<td>23</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington/Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Hogan Lovells</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">121</td>
+<td id="new" style="padding-left:12px;padding-right:12px;">NEW</td>
+<td id="boldbold" class="backblue">37</td>
+<td>36</td>
+<td id="boldboldbold">3%</td>
+<td id="backblue">19</td>
+<td>19</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington / London</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Buchanan Ingersoll &amp; Rooney</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">122</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>4</td>
+<td id="boldbold" class="backblue">37</td>
+<td>39</td>
+<td id="boldboldbold">-5%</td>
+<td id="backblue">17</td>
+<td>15</td>
+<td id="boldboldbold">11%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Pittsburgh</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Morrison &amp; Foerster</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">123</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">1</td>
+<td id="boldbold" class="backblue">37</td>
+<td>34</td>
+<td id="boldboldbold">9%</td>
+<td id="backblue">12</td>
+<td>11</td>
+<td id="boldboldbold">9%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">San Francisco</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Boies, Schiller &amp; Flexner</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">124</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">14</td>
+<td id="boldbold" class="backblue">37</td>
+<td>31</td>
+<td id="boldboldbold">19%</td>
+<td id="backblue"> - </td>
+<td>17</td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Armonk, N.Y.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Milbank, Tweed, Hadley &amp; McCloy</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">125</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">6</td>
+<td id="boldbold" class="backblue">36</td>
+<td>33</td>
+<td id="boldboldbold">9%</td>
+<td id="backblue">7</td>
+<td>8</td>
+<td id="boldboldbold">-13%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Thompson Coburn</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">126</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">6</td>
+<td id="boldbold" class="backblue">35</td>
+<td>32</td>
+<td id="boldboldbold">9%</td>
+<td id="backblue">28</td>
+<td>26</td>
+<td id="boldboldbold">8%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">St. Louis</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Littler Mendelson</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">127</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">14</td>
+<td id="boldbold" class="backblue">35</td>
+<td>28</td>
+<td id="boldboldbold">25%</td>
+<td id="backblue">21</td>
+<td>19</td>
+<td id="boldboldbold">11%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">San Francisco</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Bean, Kinney &amp; Korman</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">128</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>9</td>
+<td id="boldbold" class="backblue">34</td>
+<td>36</td>
+<td id="boldboldbold">-6%</td>
+<td id="backblue">25</td>
+<td>27</td>
+<td id="boldboldbold">-7%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Arlington, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Reed Smith</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">129</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>12</td>
+<td id="boldbold" class="backblue">34</td>
+<td>39</td>
+<td id="boldboldbold">-13%</td>
+<td id="backblue">24</td>
+<td>24</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Pittsburgh</td>
+</tr>
+
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Krooth &amp; Altman</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">130</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>15</td>
+<td id="boldbold" class="backblue">34</td>
+<td>40</td>
+<td id="boldboldbold">-15%</td>
+<td id="backblue">15</td>
+<td>16</td>
+<td id="boldboldbold">-6%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Kaye Scholer</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">131</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>12</td>
+<td id="boldbold" class="backblue">33</td>
+<td>37</td>
+<td id="boldboldbold">-11%</td>
+<td id="backblue"> - </td>
+<td>13</td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Cozen O'Connor</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">132</td>
+<td id="new" style="padding-left:12px;padding-right:12px;">NEW</td>
+<td id="boldbold" class="backblue">32</td>
+<td>29</td>
+<td id="boldboldbold">10%</td>
+<td id="backblue">20</td>
+<td>18</td>
+<td id="boldboldbold">13%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Philadelphia</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Jackson Lewis</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">133</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">6</td>
+<td id="boldbold" class="backblue">32</td>
+<td>29</td>
+<td id="boldboldbold">10%</td>
+<td id="backblue">20</td>
+<td>20</td>
+<td id="boldboldbold">-2%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">White Plains, N.Y.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Foley Hoag</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">134</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>6</td>
+<td id="boldbold" class="backblue">32</td>
+<td>33</td>
+<td id="boldboldbold">-3%</td>
+<td id="backblue">12</td>
+<td>11</td>
+<td id="boldboldbold">9%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Boston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Olsson Frank Weeda Terman Matz</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">135</td>
+<td id="upup"><img src="images/up.jpg" style="width:10px; height:10px;padding-right:2px;">2</td>
+<td id="boldbold" class="backblue">31</td>
+<td>28</td>
+<td id="boldboldbold">11%</td>
+<td id="backblue">21</td>
+<td>20</td>
+<td id="boldboldbold">5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Ogletree, Deakins, Nash, Smoak &amp; Stewart</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">136</td>
+<td id="new" style="padding-left:12px;padding-right:12px;">NEW</td>
+<td id="boldbold" class="backblue">31</td>
+<td>24</td>
+<td id="boldboldbold">29%</td>
+<td id="backblue">19</td>
+<td>13</td>
+<td id="boldboldbold">46%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Atlanta</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Kenyon &amp; Kenyon</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">137</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>14</td>
+<td id="boldbold" class="backblue">31</td>
+<td>35</td>
+<td id="boldboldbold">-11%</td>
+<td id="backblue">15</td>
+<td>15</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">New York</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Venable</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">138</td>
+<td id="equal" style="padding-left:12px;padding-right:12px;">&#8212;</td>
+<td id="boldbold" class="backblue">31</td>
+<td>30</td>
+<td id="boldboldbold">3%</td>
+<td id="backblue">15</td>
+<td>15</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Baltimore</td>
+</tr>
+
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Thompson Hine</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">139</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">31</td>
+<td>32</td>
+<td id="boldboldbold">-3%</td>
+<td id="backblue">13</td>
+<td>15</td>
+<td id="boldboldbold">-11%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Cleveland</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Greenblum &amp; Bernstein</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">140</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>9</td>
+<td id="boldbold" class="backblue">31</td>
+<td>33</td>
+<td id="boldboldbold">-6%</td>
+<td id="backblue"> - </td>
+<td>15</td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Reston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Duane Morris</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">141</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>10</td>
+<td id="boldbold" class="backblue">30</td>
+<td>32</td>
+<td id="boldboldbold">-6%</td>
+<td id="backblue">20</td>
+<td>21</td>
+<td id="boldboldbold">-6%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Philadelphia</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Miles &amp; Stockbridge</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">142</td>
+<td id="new" style="padding-left:12px;padding-right:12px;">NEW</td>
+<td id="boldbold" class="backblue">30</td>
+<td>19</td>
+<td id="boldboldbold">58%</td>
+<td id="backblue">14</td>
+<td>11</td>
+<td id="boldboldbold">27%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Baltimore</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Hunton &amp; Williams</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">143</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>16</td>
+<td id="boldbold" class="backblue">30</td>
+<td>34</td>
+<td id="boldboldbold">-12%</td>
+<td id="backblue">13</td>
+<td>15</td>
+<td id="boldboldbold">-13%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Richmond, Va.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Buchanan Ingersoll &amp; Rooney</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">144</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>13</td>
+<td id="boldbold" class="backblue">30</td>
+<td>33</td>
+<td id="boldboldbold">-9%</td>
+<td id="backblue">11</td>
+<td>12</td>
+<td id="boldboldbold">-5%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Pittsburgh</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Gilbert</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">145</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>1</td>
+<td id="boldbold" class="backblue">30</td>
+<td>28</td>
+<td id="boldboldbold">7%</td>
+<td id="backblue">11</td>
+<td>10</td>
+<td id="boldboldbold">10%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Washington</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Baker, Donelson, Bearman, Caldwell &amp; Berkowitz</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">146</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>10</td>
+<td id="boldbold" class="backblue">29</td>
+<td>31</td>
+<td id="boldboldbold">-6%</td>
+<td id="backblue">6</td>
+<td>7</td>
+<td id="boldboldbold">-21%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Huntsville, Tenn.</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Schiff Hardin</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">147</td>
+<td id="new" style="padding-left:12px;padding-right:12px;">NEW</td>
+<td id="boldbold" class="backblue">28</td>
+<td>15</td>
+<td id="boldboldbold">87%</td>
+<td id="backblue">20</td>
+<td>14</td>
+<td id="boldboldbold">43%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Chicago</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Manatt, Phelps &amp; Phillips</th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">148</td>
+<td id="downdown"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>22</td>
+<td id="boldbold" class="backblue">28</td>
+<td>33</td>
+<td id="boldboldbold">-15%</td>
+<td id="backblue">18</td>
+<td>21</td>
+<td id="boldboldbold">-14%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Los Angeles</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;padding-left:6px; padding-right:6px">Novak Druce Connolly Bove &amp; Quigg </th>
+<td id="backblue" style="padding-left:8px; padding-right:8px;">149</td>
+<td id="new" style="padding-left:12px;padding-right:12px;">NEW</td>
+<td id="boldbold" class="backblue">28</td>
+<td>n/a</td>
+<td id="boldboldbold">n/a</td>
+<td id="backblue">18</td>
+<td>n/a</td>
+<td id="boldboldbold">n/a</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Houston</td>
+</tr>
+<tr>
+<th style="border-left:1px solid silver;border-bottom:1px solid silver;padding-left:6px; padding-right:6px;">Andrews Kurth</th>
+<td id="backblue" style="border-bottom:1px solid silver;padding-left:8px; padding-right:8px;">150</td>
+<td id="downdown" style="border-bottom:1px solid silver;padding-left:10px; padding-right:10px"><img src="images/down.jpg" style="width:10px; height:10px;padding-right:2px;"><span id="negative">-</span>14</td>
+<td id="boldbold" class="backblue">28</td>
+<td >32</td>
+<td id="boldboldbold" >-13%</td>
+<td id="backblue" >13</td>
+<td >13</td>
+<td id="boldboldbold">0%</td>
+<td style="border-right: 1px solid silver;border-left:2px solid black;padding-left:3px; padding-right:3px;">Houston</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+</div>
+
+<div id="words">
+<div id="metho">
+A GUIDE TO OUR METHODOLOGY</div>
+<div id="metrocontent">
+Firms were asked to report a head count of full-time-employee lawyers in each of their Washington metro area offices as of Dec. 31, 2013. The Washington metro area includes the District of Columbia; the Maryland and Virginia counties of Fairfax, Arlington, Prince Georgeâ€™s and Montgomery; and the independent cities of Arlington, Alexandria and Falls Church in Virginia. Some firms chose not to submit data, and in those cases The National Law Journal uses estimates or reporting from other ALM census surveys. An n/a indicates that a firm did not exist prior to 2013; in Novak Druce Connolly Bove + Quiggâ€™s case, two firms merged on Jan. 1 last year. A hyphen indicates that the firmâ€™s partnership data were unavailable. Total partner counts, which were used to break ties, include both equity and nonequity partners. Some head counts have been rounded to whole numbers.
+</div></div>
+<div id="credit" style="margin-top:30px;font-size:10px;color:gray;text-align:right;">
+(Design by Chen Wu.) </div>
+
+</body>
